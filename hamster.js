@@ -29,7 +29,6 @@ Hamster.PREFIX = '';
 Hamster.READY = false;
 
 Hamster.Instance = function(element){
-
   if (!Hamster.READY) {
     // fix browser inconistencies
     Hamster.normalise.browser();
@@ -55,7 +54,6 @@ Hamster.Instance = function(element){
  * @constructor
  */
 Hamster.Instance.prototype = {
-
   /**
    * bind events to the instance
    * @param   {Function}    handler
@@ -80,7 +78,6 @@ Hamster.Instance.prototype = {
    * @returns {Hamster.Instance}
    */
   unwheel: function offEvent(handler, useCapture){
-
     // if no handler argument,
     // unbind the last bound handler (if exists)
     if (handler === undefined && (handler = this.handlers.slice(-1)[0])) {
@@ -96,11 +93,9 @@ Hamster.Instance.prototype = {
 
     return this;
   }
-
 };
 
 Hamster.event = {
-
   /**
    * cross-browser 'addWheelListener'
    * @param   {Instance}    hamster
@@ -124,8 +119,7 @@ Hamster.event = {
       var event = Hamster.normalise.event(originalEvent),
           delta = Hamster.normalise.delta(originalEvent);
 
-      // fire the original handler
-      // with normalised event object and deltas as arguments
+      // fire the original handler with normalised arguments
       return originalHandler(event, delta[0], delta[1], delta[2]);
 
     };
@@ -133,7 +127,7 @@ Hamster.event = {
     // cross-browser addEventListener
     hamster.element[Hamster.ADD_EVENT](Hamster.PREFIX + eventName, handler, useCapture || false);
 
-    // store the original and normalised handlers on the instance
+    // store original and normalised handlers on the instance
     hamster.handlers.push({
       original: originalHandler,
       normalised: handler
@@ -148,7 +142,6 @@ Hamster.event = {
    * @param   {Boolean}     useCapture
    */
   remove: function remove(hamster, eventName, handler, useCapture){
-
     // search for handler on the instance
     var originalHandler = handler,
         lookup = {};
@@ -164,7 +157,6 @@ Hamster.event = {
       hamster.handlers.splice(hamster.handlers.indexOf(handler), 1);
     }
   }
-
 };
 
 /**
@@ -176,12 +168,10 @@ var lowestDelta,
     lowestDeltaXY;
 
 Hamster.normalise = {
-
   /**
    * fix browser inconistencies
    */
   browser: function normaliseBrowser(){
-
     // detect deprecated wheel events
     if (!('onwheel' in document || document.documentMode >= 9)) {
       Hamster.SUPPORT = document.onmousewheel !== undefined ?
@@ -217,16 +207,15 @@ Hamster.normalise = {
         return -1;
       };
     }
-
   },
 
   /**
    * create a normalised event object
    * @param   {Function}    originalEvent
-   * @returns {Object}      e
+   * @returns {Object}      event
    */
    event: function normaliseEvent(originalEvent){
-    var e = Hamster.SUPPORT === 'wheel' ? originalEvent : {
+    var event = Hamster.SUPPORT === 'wheel' ? originalEvent : {
           // keep a reference to the original event object
           originalEvent: originalEvent,
           target: originalEvent.target || originalEvent.srcElement,
@@ -254,19 +243,19 @@ Hamster.normalise = {
 
     // 'mousewheel'
     if (originalEvent.wheelDelta) {
-      e.deltaY = - 1/40 * originalEvent.wheelDelta;
+      event.deltaY = - 1/40 * originalEvent.wheelDelta;
     }
     // webkit
     if (originalEvent.wheelDeltaX) {
-      e.deltaX = - 1/40 * originalEvent.wheelDeltaX;
+      event.deltaX = - 1/40 * originalEvent.wheelDeltaX;
     }
 
     // 'DomMouseScroll'
     if (originalEvent.detail) {
-      e.deltaY = originalEvent.detail;
+      event.deltaY = originalEvent.detail;
     }
 
-    return e;
+    return event;
   },
 
   /**
@@ -329,7 +318,6 @@ Hamster.normalise = {
 
     return [delta, deltaX, deltaY];
   }
-
 };
 
 // Expose Hamster to the global object
