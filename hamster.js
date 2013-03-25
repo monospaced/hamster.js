@@ -25,7 +25,7 @@ Hamster.ADD_EVENT = 'addEventListener';
 Hamster.REMOVE_EVENT = 'removeEventListener';
 Hamster.PREFIX = '';
 
-// if browser inconistencies have been fixed...
+// until browser inconistencies have been fixed...
 Hamster.READY = false;
 
 Hamster.Instance = function(element){
