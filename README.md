@@ -9,7 +9,7 @@ The event callback receives 3 extra arguments which are the normalized “deltas
       console.log(delta, deltaX, deltaY);
     });
 
-No jQuery or other libraries required.
+No jQuery or other libraries required, but an <a href="http://monospaced.github.com/hamster.js/angular/">adaptor for AngularJS</a> is available.
 
 Tested in these [core browsers](http://monospaced.github.com/obs).
 
