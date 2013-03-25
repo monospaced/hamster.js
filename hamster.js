@@ -10,7 +10,7 @@
 /**
  * Hamster
  * use this to create instances
- * @returns {Hammer.Instance}
+ * @returns {Hamster.Instance}
  * @constructor
  */
 var Hamster = function(element) {
@@ -60,7 +60,7 @@ Hamster.Instance.prototype = {
    * bind events to the instance
    * @param   {Function}    handler
    * @param   {Boolean}     useCapture
-   * @returns {Hammer.Instance}
+   * @returns {Hamster.Instance}
    */
   wheel: function onEvent(handler, useCapture){
     Hamster.event.add(this, Hamster.SUPPORT, handler, useCapture);
@@ -77,7 +77,7 @@ Hamster.Instance.prototype = {
    * unbind events to the instance
    * @param   {Function}    handler
    * @param   {Boolean}     useCapture
-   * @returns {Hammer.Instance}
+   * @returns {Hamster.Instance}
    */
   unwheel: function offEvent(handler, useCapture){
 
