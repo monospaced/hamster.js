@@ -20,12 +20,10 @@ var hsWheelEvents = angular.module('hsWheelEvents', []);
 hsWheelEvents.directive('hsWheel', ['$parse', function($parse){
   return function(scope, element, attr) {
     var fn = $parse(attr['hsWheel']),
-        elm = element[0],
-        ngElm = angular.element(elm),
-        hamster = ngElm.data('hamster');
+        hamster = element.data('hamster');
     if (!hamster) {
-      hamster = Hamster(elm);
-      ngElm.data('hamster', hamster);
+      hamster = Hamster(element[0]);
+      element.data('hamster', hamster);
     }
     hamster.wheel(function(event, delta, deltaX, deltaY){
       scope.$apply(function() {
