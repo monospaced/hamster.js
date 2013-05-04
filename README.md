@@ -1,7 +1,12 @@
-hamster.js
+Hamster.js
 ==========
 
 A standalone javascript library for cross-browser mouse wheel support.
+
+[See it in action](http://monospaced.github.io/hamster.js).
+
+Usage
+-----
 
 The event callback receives 3 extra arguments which are the normalized “deltas” of the mouse wheel.
 
@@ -9,17 +14,25 @@ The event callback receives 3 extra arguments which are the normalized “deltas
       console.log(delta, deltaX, deltaY);
     });
 
-No jQuery or other libraries required, but an <a href="http://github.com/monospaced/hamster.js/blob/master/angular/angular-hamster.js">adaptor for AngularJS</a> is available.
+Support
+-------
 
-Tested in these [core browsers](http://monospaced.github.com/obs).
+No jQuery or other libraries required, but an <a href="http://github.com/monospaced/angular-mousewheel">adaptor for AngularJS</a> is available.
 
-See it in action
-----------------
+Tested in these [core browsers](http://monospaced.github.io/obs).
 
-[monospaced.github.com/hamster.js](http://monospaced.github.com/hamster.js)
+Install
+-------
+
+    bower install monospaced/hamster.js
+
+Demo
+----
+
+[monospaced.github.io/hamster.js](http://monospaced.github.io/hamster.js)
 
 Reference
------------
+---------
 
 * [jquery-mousewheel](https://github.com/brandonaaron/jquery-mousewheel)
 * [wheel event on MDN](https://developer.mozilla.org/en-US/docs/DOM/Mozilla_event_reference/wheel)

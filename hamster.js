@@ -1,8 +1,8 @@
-/*! Hamster.JS - v0.1
- * http://monospaced.github.com/hamster.js
- *
- * Copyright (c) 2013 Scott Boyle <scott@monospaced.com>;
- * Licensed under the MIT license */
+/*
+ * Hamster.js v1.0.1
+ * (c) 2013 Monospaced http://monospaced.com
+ * License: MIT
+ */
 
 (function(window, document){
 'use strict';
@@ -330,4 +330,4 @@ if (typeof window.define === 'function' && window.define.amd) {
   });
 }
 
-})(window, document);
+})(window, window.document);
