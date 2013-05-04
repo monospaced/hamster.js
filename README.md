@@ -24,7 +24,7 @@ Tested in these [core browsers](http://monospaced.github.io/obs).
 Install
 -------
 
-    bower install monospaced/hamster.js
+    bower install hamsterjs
 
 Demo
 ----
