@@ -17,7 +17,7 @@ The event callback receives 3 extra arguments which are the normalized “deltas
 Support
 -------
 
-No jQuery or other libraries required, but an <a href="http://github.com/monospaced/angular-mousewheel">adaptor for AngularJS</a> is available.
+No jQuery or other libraries required, but an <a href="http://github.com/monospaced/angular-mousewheel">adpater for AngularJS</a> is available.
 
 Tested in these [core browsers](http://monospaced.github.io/obs).
 
