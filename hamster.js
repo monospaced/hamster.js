@@ -25,12 +25,12 @@ Hamster.ADD_EVENT = 'addEventListener';
 Hamster.REMOVE_EVENT = 'removeEventListener';
 Hamster.PREFIX = '';
 
-// until browser inconistencies have been fixed...
+// until browser inconsistencies have been fixed...
 Hamster.READY = false;
 
 Hamster.Instance = function(element){
   if (!Hamster.READY) {
-    // fix browser inconistencies
+    // fix browser inconsistencies
     Hamster.normalise.browser();
 
     // Hamster is ready...!
@@ -175,7 +175,7 @@ var lowestDelta,
 
 Hamster.normalise = {
   /**
-   * fix browser inconistencies
+   * fix browser inconsistencies
    */
   browser: function normaliseBrowser(){
     // detect deprecated wheel events
