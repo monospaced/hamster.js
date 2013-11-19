@@ -1,5 +1,5 @@
 /*
- * Hamster.js v1.0.3
+ * Hamster.js v1.0.4
  * (c) 2013 Monospaced http://monospaced.com
  * License: MIT
  */
