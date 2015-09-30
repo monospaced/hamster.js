@@ -314,6 +314,9 @@ if (typeof window.define === 'function' && window.define.amd) {
   window.define('hamster', [], function(){
     return Hamster;
   });
+} else if ( typeof exports === 'object' ) {
+  // CommonJS
+  module.exports = Hamster;
 }
 
 })(window, window.document);
