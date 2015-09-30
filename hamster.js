@@ -306,17 +306,17 @@ Hamster.normalise = {
   }
 };
 
-// Expose Hamster to the global object
-window.Hamster = Hamster;
-
-// requireJS module definition
 if (typeof window.define === 'function' && window.define.amd) {
+  // AMD
   window.define('hamster', [], function(){
     return Hamster;
   });
-} else if ( typeof exports === 'object' ) {
+} else if (typeof exports === 'object') {
   // CommonJS
   module.exports = Hamster;
+} else {
+  // Browser global
+  window.Hamster = Hamster;
 }
 
 })(window, window.document);
