@@ -286,6 +286,11 @@ Hamster.normalise = {
       delta = originalEvent.detail * -1;
     }
 
+    // Avoid to return NaN
+    if (delta === 0) {
+    	return [0, 0, 0];
+    }
+
     // look for lowest delta to normalize the delta values
     absDelta = Math.abs(delta);
     if (!lowestDelta || absDelta < lowestDelta) {
