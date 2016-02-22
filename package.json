@@ -10,7 +10,7 @@
     "wheel"
   ],
   "homepage": "http://monospaced.github.io/hamster.js/",
-  "main": "elastic",
+  "main": "hamster.js",
   "bugs": "http://github.com/monospaced/hamster.js/issues",
   "license" : "MIT",
   "repository" : {
