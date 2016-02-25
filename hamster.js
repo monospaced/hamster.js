@@ -8,19 +8,21 @@
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define([], function () {
-      return (root[exportName] = factory());
+      return (root[exportName] = factory(root));
     });
   } else if (typeof module === 'object' && module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like enviroments that support module.exports,
     // like Node.
-    module.exports = factory();
+    module.exports = factory(root);
   } else {
     // Browser globals
-    root[exportName] = factory();
+    root[exportName] = factory(root);
   }
-}(window || this, function () {
+}(window || this, function (window) {
   'use strict';
+
+  var document = window.document;
 
   /**
    * Hamster
