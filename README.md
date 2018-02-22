@@ -31,7 +31,9 @@ Tested in these [core browsers](http://monospaced.github.io/obs).
 Install
 -------
 
-    bower install hamsterjs
+```sh
+$ yarn add hamsterjs
+```
 
 Demo
 ----
