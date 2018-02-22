@@ -208,7 +208,7 @@ Hamster.normalise = {
           type: 'wheel',
           deltaMode: originalEvent.type === 'MozMousePixelScroll' ? 0 : 1,
           deltaX: 0,
-          delatZ: 0,
+          deltaZ: 0,
           preventDefault: function(){
             if (originalEvent.preventDefault) {
               originalEvent.preventDefault();
