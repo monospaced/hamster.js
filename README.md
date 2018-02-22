@@ -10,9 +10,16 @@ Usage
 
 The event callback receives 3 extra arguments which are the normalized “deltas” of the mouse wheel.
 
-    Hamster(el).wheel(function(event, delta, deltaX, deltaY){
-      console.log(delta, deltaX, deltaY);
-    });
+```js
+var hamster = Hamster(el);
+
+hamster.wheel(function(event, delta, deltaX, deltaY){
+  console.log(delta, deltaX, deltaY);
+});
+
+// destroy
+hamster.unwheel();
+```
 
 Support
 -------

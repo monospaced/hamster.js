@@ -332,9 +332,13 @@
 
       var test3 = document.getElementById('test3');
 
-      Hamster(test3).wheel(function(event, delta, deltaX, deltaY){
+      var hamsterTest3 = Hamster(test3);
+
+      hamsterTest3.wheel(function(event, delta, deltaX, deltaY){
         log('#test3: I should not have been logged');
-      }).unwheel();
+      });
+
+      hamsterTest3.unwheel();
 
       // test 4
 
