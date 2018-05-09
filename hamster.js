@@ -1,7 +1,12 @@
 /*
- * Hamster.js v1.1.2
+ * Hamster.js v1.1.4
  * (c) 2013 Monospaced http://monospaced.com
  * License: MIT
+ */
+
+ /*
+ MODIFIED FOR PASSIVE EVENT LISTENERS
+ BY KENSINGTON TECHNOLOGY ASSOCIATES
  */
 
 (function(window, document){
@@ -13,8 +18,8 @@
  * @returns {Hamster.Instance}
  * @constructor
  */
-var Hamster = function(element) {
-  return new Hamster.Instance(element);
+var Hamster = function(element, passive) {
+  return new Hamster.Instance(element, passive);
 };
 
 // default event name
@@ -28,7 +33,7 @@ Hamster.PREFIX = '';
 // until browser inconsistencies have been fixed...
 Hamster.READY = false;
 
-Hamster.Instance = function(element){
+Hamster.Instance = function(element, passive){
   if (!Hamster.READY) {
     // fix browser inconsistencies
     Hamster.normalise.browser();
@@ -38,6 +43,8 @@ Hamster.Instance = function(element){
   }
 
   this.element = element;
+
+  this.passive = passive || false;
 
   // store attached event handlers
   this.handlers = [];
@@ -125,7 +132,12 @@ Hamster.event = {
     };
 
     // cross-browser addEventListener
-    hamster.element[Hamster.ADD_EVENT](Hamster.PREFIX + eventName, handler, useCapture || false);
+    if (!hamster.passive) {
+      hamster.element[Hamster.ADD_EVENT](Hamster.PREFIX + eventName, handler, useCapture || false);
+    }
+    else {
+      hamster.element[Hamster.ADD_EVENT](Hamster.PREFIX + eventName, handler, { passive: true } );
+    }
 
     // store original and normalised handlers on the instance
     hamster.handlers.push({

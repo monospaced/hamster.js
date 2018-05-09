@@ -1,6 +1,6 @@
 {
   "name": "hamsterjs",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "main": "hamster.js",
   "ignore": [
     "**/.*",
