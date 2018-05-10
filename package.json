@@ -1,7 +1,7 @@
 {
-  "name": "hamsterjs",
+  "name": "@kensingtontech/hamsterjs",
   "version": "1.1.4",
-  "description": "A standalone javascript library for cross-browser mouse wheel support.",
+  "description": "A standalone javascript library for cross-browser mouse wheel support",
   "keywords": [
     "hamster",
     "hamsterjs",
@@ -25,5 +25,6 @@
   "files": [
     "hamster.js",
     "package.json"
-  ]
+  ],
+  "types": "./hamster.d.ts"
 }
