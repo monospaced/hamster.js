@@ -125,7 +125,7 @@ Hamster.event = {
     };
 
     // cross-browser addEventListener
-    hamster.element[Hamster.ADD_EVENT](Hamster.PREFIX + eventName, handler, useCapture || false);
+    hamster.element[Hamster.ADD_EVENT](Hamster.PREFIX + eventName, handler, useCapture || { passive: false });
 
     // store original and normalised handlers on the instance
     hamster.handlers.push({
